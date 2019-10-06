@@ -1,0 +1,35 @@
+{
+  "name": "iSystem to MQTT",
+  "version": "1",
+  "slug": "isystem_to_mqtt",
+  "description": "iSystem to MQTT bridge",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "services": [
+	  "mqtt:need"
+  ],
+  "auto_uart": true,
+  "boot": "auto",
+  "options": {
+   "broker": {
+     "host": "core-mosquitto",
+      "username": null,
+      "password": null
+   },
+   "boiler" : "diematic3",
+   "serial": "/dev/ttyUSBxx",
+   "log": "FATAL",
+   "bimaster": "false"
+  },
+  "schema": {
+      "broker": {
+        "host": "str",
+         "username": "str",
+         "password": "str"
+      },
+      "boiler": "list(modulens-o|diematic3)",
+      "serial": "str",
+      "log": "str",
+      "bimaster": "bool"
+  }
+}
